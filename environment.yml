@@ -1,0 +1,11 @@
+name: TornadoProject
+
+dependencies:
+    - python=3.10.6
+    - jupyter=1.0.0
+    - pip
+    - pip:
+        - numpy==1.22.3
+        - pandas==1.4.2
+        - matplotlib==3.5.1
+        - boto==2.49.0
