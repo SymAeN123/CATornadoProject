@@ -8,9 +8,11 @@ import sys
 root = __file__.removesuffix("case_downloader.py")
 os.chdir(root)
 
+target_csv = "Ameya_storm_data_search_results.csv"
+
 valid_radars = {"KDAX", "KBBX", "KHNX", "KEYX", "KNKX", "KSOX", "KESX", "KRGX", "KYUX", "KVTX", "KVBX", "KMUX", "KMAX", "KBHX"}
 
-events = pd.read_csv(".\\spreadsheets\\Ameya_storm_data_search_results.csv")
+events = pd.read_csv(".\\spreadsheets\\" + target_csv)
 
 dl_cases = list(map(lambda x: int(x), os.listdir(root+"cases\\")))
 
@@ -81,6 +83,8 @@ while True:
 os.chdir(".\\cases\\")
 os.mkdir(str(choice))
 os.chdir(".\\"+str(choice)+"\\")
+with open('.gitkeep', 'w') as fp:
+    pass
 
 #Download Necessary Files
 for site in sites:
